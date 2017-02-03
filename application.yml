@@ -17,3 +17,9 @@ tkn:
     hierarchy: false
   reply:
     rate: 3000
+---
+spring:
+  profiles: via
+tkn:
+  reply:
+    rate: 30000

@@ -23,3 +23,11 @@ spring:
 tkn:
   reply:
     rate: 30000
+server:
+  port: 9090
+
+---
+spring:
+  profiles: cde
+server:
+  port: 8090

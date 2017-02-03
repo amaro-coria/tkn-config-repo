@@ -12,7 +12,7 @@ server:
   port: 9090
 tkn:
   api:
-    url: localhost:8090/api
+    url: 172.17.1.20:8090/api
     fail-fast: false
     hierarchy: false
   reply:
@@ -31,3 +31,10 @@ spring:
   profiles: cde
 server:
   port: 8090
+
+---
+spring:
+  profiles: oviedo
+tkn:
+  api:
+    url: localhost:8090/api

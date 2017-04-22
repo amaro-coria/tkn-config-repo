@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2/sitm_409
+    url: jdbc:postgresql://172.17.0.2/SDM
     username: postgres
     password: admin
   jpa:
@@ -9,7 +9,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: 9090
+  port: 9099
 tkn:
   api:
     url: 172.17.1.20:8090/api

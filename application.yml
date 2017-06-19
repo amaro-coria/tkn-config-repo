@@ -1,7 +1,7 @@
 spring:
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2/SDM
+    url: jdbc:postgresql://localhost/SITM
     username: postgres
     password: admin
   jpa:
@@ -9,45 +9,300 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 server:
-  port: 9099
+  port: 9090
+  compression:
+    enabled: true
+    mime-types: text/html,text/css,application/javascript,application/json
+
 tkn:
   api:
-    url: 172.17.1.20:8090/api
+    url: 172.17.0.122:8090/api
     fail-fast: false
     hierarchy: false
   reply:
+    number: 50
     rate: 3000
+    status: /home/teknei/SITM/CONFIG/reply-status.log
 eureka:
   client:
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/ 
+      defaultZone: http://172.17.0.122:8761/eureka/
 ---
 spring:
   profiles: via
 tkn:
   reply:
     rate: 30000
-server:
-  port: 9090
+
+---
+spring:
+  profiles: kvr
+  datasource:
+    url: jdbc:postgresql://localhost/SITM
+    username: sitm_kvr
+    password: usradmin
+
+---
+spring:
+  profiles: tor
+  datasource:
+    url: jdbc:postgresql://localhost/SITM
+    username: sitm_tor
+    password: usradmin
 
 ---
 spring:
   profiles: cde
   datasource:
-    driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2/ACA_SITM
-    username: postgres
-    password: admin
-  jpa:
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
+    url: jdbc:postgresql://192.168.1.121:5432/ACA_SITM
+    username: sitm_adm
+    password: JAG$2015essekey
+
+server:
+  port: 8090
+
+---
+
+spring:
+  profiles: cco
+  datasource:
+    url: jdbc:postgresql://172.17.0.121/SITM
+    username: sitm_adm
+    password: usradmin
+
 server:
   port: 8090
 
 ---
 spring:
+  profiles: desconocido
+tkn:
+  api:
+    url: 172.17.1.122:8090/api
+---
+spring:
+  profiles: zocalo
+tkn:
+  api:
+    url: 172.17.1.20:8090/api
+
+---
+spring:
+  profiles: melchora
+tkn:
+  api:
+    url: 172.17.2.20:8090/api
+
+
+---
+spring:
+  profiles: seguro
+tkn:
+  api:
+    url: 172.17.3.20:8090/api
+
+---
+spring:
+  profiles: cinea
+tkn:
+  api:
+    url: 172.17.4.20:8090/api
+
+
+---
+spring:
+  profiles: flores
+tkn:
+  api:
+    url: 172.17.5.20:8090/api
+
+---
+spring:
+  profiles: michoacan
+tkn:
+  api:
+    url: 172.17.6.20:8090/api
+
+
+---
+spring:
+  profiles: palacio
+tkn:
+  api:
+    url: 172.17.7.20:8090/api
+
+---
+spring:
+  profiles: anclas
+tkn:
+  api:
+    url: 172.17.8.20:8090/api
+
+
+---
+spring:
+  profiles: ignacioa
+tkn:
+  api:
+    url: 172.17.9.20:8090/api
+
+---
+spring:
+  profiles: encinoa
+tkn:
+  api:
+    url: 172.17.10.20:8090/api
+
+
+---
+spring:
+  profiles: jacarandasa
+tkn:
+  api:
+    url: 172.17.11.20:8090/api
+
+---
+spring:
+  profiles: renacimiento
+tkn:
+  api:
+    url: 172.17.12.20:8090/api
+
+
+---
+spring:
+  profiles: zapata
+tkn:
+  api:
+    url: 172.17.13.20:8090/api
+
+---
+spring:
+  profiles: postal
+tkn:
+  api:
+    url: 172.17.14.20:8090/api
+
+
+---
+spring:
+  profiles: vacacional
+tkn:
+  api:
+    url: 172.17.15.20:8090/api
+
+---
+spring:
+  profiles: paso
+tkn:
+  api:
+    url: 172.17.16.20:8090/api
+
+
+---
+spring:
+  profiles: venta
+tkn:
+  api:
+    url: 172.17.17.20:8090/api
+
+---
+spring:
+  profiles: retorno
+tkn:
+  api:
+    url: 172.17.18.20:8090/api
+
+
+---
+spring:
+  profiles: leyes
+tkn:
+  api:
+    url: 172.17.19.20:8090/api
+
+---
+spring:
+  profiles: central
+tkn:
+  api:
+    url: 172.17.20.20:8090/api
+---
+
+spring:
+  profiles: jacarandasb
+tkn:
+  api:
+    url: 172.17.21.20:8090/api
+---
+
+spring:
+  profiles: encinob
+tkn:
+  api:
+    url: 172.17.22.20:8090/api
+---
+
+spring:
+  profiles: ignaciob
+tkn:
+  api:
+    url: 172.17.23.20:8090/api
+---
+
+spring:
+  profiles: cineb
+tkn:
+  api:
+    url: 172.17.24.20:8090/api
+---
+
+spring:
+  profiles: melchorb
+tkn:
+  api:
+    url: 172.17.25.20:8090/api
+---
+
+spring:
   profiles: oviedo
 tkn:
   api:
-    url: localhost:8090/api
+    url: 172.17.26.20:8090/api
+---
+spring:
+  profiles: bus
+  datasource:
+    url: jdbc:postgresql://localhost/SITM
+    username: postgres
+    password: admin
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+
+---
+spring:
+  profiles: pde
+  datasource:
+    url: jdbc:postgresql://localhost/SITM_REPLICA
+    username: postgres
+    password: admin
+tkn:
+  api:
+    url: 172.17.0.122:8090/api
+  reply:
+    number: 1000
+    rate: 1000
+    status:
+      file: /home/Administrador/SITM/CONFIG/reply-status.log
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 300000
